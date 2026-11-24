@@ -1,6 +1,7 @@
 import javax.swing.JOptionPane;
 
 import Guia1.GuiaMain;
+import Guia2.Guia2Main;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,8 +23,7 @@ public class Main {
                 guia1.Guia1();
                 break;
             case "2":
-                JOptionPane.showMessageDialog(null,
-                        "La Guía 2 todavía no está disponible en el proyecto.");
+                Guia2Main.main(new String[0]);
                 break;
             default:
                 JOptionPane.showMessageDialog(null, "Opción inválida.");
