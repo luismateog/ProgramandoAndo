@@ -1,23 +1,32 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 import Guia1.GuiaMain;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Bienvenido A Programando Ando");
-        System.out.println("Aquí Aprenderas Java");
-        System.out.println("Ingrese una opcion para El Programa");
-        System.out.println("1.Ejercicio Guia 1");
+        String opcion = JOptionPane.showInputDialog(null,
+                "Bienvenido a Programando Ando\n"
+                        + "Aquí aprenderás Java\n"
+                        + "Ingrese una opción para el programa:\n"
+                        + "1. Ejercicios Guía 1\n"
+                        + "2. Ejercicios Guía 2");
 
-        int opcion;
+        if (opcion == null) {
+            return;
+        }
 
-        Scanner input = new Scanner(System.in);
-
-        opcion = input.nextInt();
-
-        if (opcion == 1) {
-            System.out.println("Ingresando A Ejercicios Guia 1");
-            GuiaMain guia1 = new GuiaMain();
+        switch (opcion) {
+            case "1":
+                System.out.println("Ingresando a Ejercicios Guía 1");
+                GuiaMain guia1 = new GuiaMain();
+                guia1.Guia1();
+                break;
+            case "2":
+                JOptionPane.showMessageDialog(null,
+                        "La Guía 2 todavía no está disponible en el proyecto.");
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Opción inválida.");
         }
     }
 }
