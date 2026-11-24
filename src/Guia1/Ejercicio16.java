@@ -1,5 +1,7 @@
 package Guia1;
 
+import javax.swing.JOptionPane;
+
 public class Ejercicio16 {
     public static void main(String[] args) {
         // El arreglo guarda el inicio y el final del rango.
@@ -12,6 +14,6 @@ public class Ejercicio16 {
             }
         }
 
-        System.out.println("La suma de los números impares del 1 al 50 es: " + suma);
+        JOptionPane.showMessageDialog(null, "La suma de los números impares del 1 al 50 es: " + suma);
     }
 }

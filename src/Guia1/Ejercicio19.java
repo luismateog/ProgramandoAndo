@@ -1,5 +1,7 @@
 package Guia1;
 
+import javax.swing.JOptionPane;
+
 public class Ejercicio19 {
     public static void main(String[] args) {
         int cantidad = 0;
@@ -10,6 +12,6 @@ public class Ejercicio19 {
             }
         }
 
-        System.out.println("Hay " + cantidad + " múltiplos de 10 entre 1 y 200.");
+        JOptionPane.showMessageDialog(null, "Hay " + cantidad + " múltiplos de 10 entre 1 y 200.");
     }
 }

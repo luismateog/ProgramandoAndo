@@ -1,18 +1,16 @@
 package Guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio29 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        String cadena = JOptionPane.showInputDialog("Ingrese una cadena:");
+        if (cadena == null) return;
 
-        System.out.print("Ingrese una cadena: ");
-        String cadena = entrada.nextLine();
-
+        StringBuilder resultado = new StringBuilder();
         for (int i = 0; i < cadena.length(); i++) {
-            System.out.println(cadena.charAt(i));
+            resultado.append(cadena.charAt(i)).append("\n");
         }
-
-        entrada.close();
+        JOptionPane.showMessageDialog(null, resultado.toString());
     }
 }

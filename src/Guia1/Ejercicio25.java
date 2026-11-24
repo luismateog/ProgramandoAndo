@@ -1,15 +1,15 @@
 package Guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio25 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
         int[] numeros = new int[10];
 
         for (int i = 0; i < numeros.length; i++) {
-            System.out.print("Ingrese el numero " + (i + 1) + ": ");
-            numeros[i] = entrada.nextInt();
+            String texto = JOptionPane.showInputDialog("Ingrese el numero " + (i + 1) + ":");
+            if (texto == null) return;
+            numeros[i] = Integer.parseInt(texto);
         }
 
         int menor = numeros[0];
@@ -19,7 +19,6 @@ public class Ejercicio25 {
             }
         }
 
-        System.out.println("El menor numero es: " + menor);
-        entrada.close();
+        JOptionPane.showMessageDialog(null, "El menor numero es: " + menor);
     }
 }

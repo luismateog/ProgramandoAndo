@@ -1,5 +1,7 @@
 package Guia1;
 
+import javax.swing.JOptionPane;
+
 public class Ejercicio15 {
     public static void main(String[] args) {
         // El arreglo guarda el inicio y el final del rango.
@@ -10,6 +12,6 @@ public class Ejercicio15 {
             suma += numero;
         }
 
-        System.out.println("La suma del 1 al 100 es: " + suma);
+        JOptionPane.showMessageDialog(null, "La suma del 1 al 100 es: " + suma);
     }
 }

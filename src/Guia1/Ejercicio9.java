@@ -1,22 +1,19 @@
 package Guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio9 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.print("Ingrese el usuario: ");
-        String usuario = entrada.nextLine();
-        System.out.print("Ingrese la contrasena: ");
-        String contrasena = entrada.nextLine();
+        String usuario = JOptionPane.showInputDialog("Ingrese el usuario:");
+        if (usuario == null) return;
+        String contrasena = JOptionPane.showInputDialog("Ingrese la contrasena:");
+        if (contrasena == null) return;
 
         if (usuario.equals("admin") && contrasena.equals("1234")) {
-            System.out.println("Bienvenido");
+            JOptionPane.showMessageDialog(null, "Bienvenido");
         } else {
-            System.out.println("Credenciales incorrectas");
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas");
         }
 
-        entrada.close();
     }
 }

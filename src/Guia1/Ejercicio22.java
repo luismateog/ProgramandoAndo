@@ -1,22 +1,21 @@
 package Guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio22 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
         int[] numeros = new int[10];
 
         for (int i = 0; i < numeros.length; i++) {
-            System.out.print("Ingrese el numero " + (i + 1) + ": ");
-            numeros[i] = entrada.nextInt();
+            String texto = JOptionPane.showInputDialog("Ingrese el numero " + (i + 1) + ":");
+            if (texto == null) return;
+            numeros[i] = Integer.parseInt(texto);
         }
 
-        System.out.println("Numeros ingresados:");
+        StringBuilder resultado = new StringBuilder("Numeros ingresados:\n");
         for (int i = 0; i < numeros.length; i++) {
-            System.out.println(numeros[i]);
+            resultado.append(numeros[i]).append("\n");
         }
-
-        entrada.close();
+        JOptionPane.showMessageDialog(null, resultado.toString());
     }
 }

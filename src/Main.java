@@ -18,7 +18,7 @@ public class Main {
 
         switch (opcion) {
             case "1":
-                System.out.println("Ingresando a Ejercicios Guía 1");
+                JOptionPane.showMessageDialog(null, "Ingresando a Ejercicios Guía 1");
                 GuiaMain guia1 = new GuiaMain();
                 guia1.Guia1();
                 break;

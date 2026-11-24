@@ -1,33 +1,33 @@
 package Guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio10 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.print("Ingrese el peso en kg: ");
-        double peso = entrada.nextDouble();
-        System.out.print("Ingrese la altura en m: ");
-        double altura = entrada.nextDouble();
+        String textoPeso = JOptionPane.showInputDialog("Ingrese el peso en kg:");
+        if (textoPeso == null) return;
+        String textoAltura = JOptionPane.showInputDialog("Ingrese la altura en m:");
+        if (textoAltura == null) return;
+        double peso = Double.parseDouble(textoPeso);
+        double altura = Double.parseDouble(textoAltura);
 
         if (peso <= 0 || altura <= 0) {
-            System.out.println("El peso y la altura deben ser mayores que cero.");
+            JOptionPane.showMessageDialog(null, "El peso y la altura deben ser mayores que cero.");
         } else {
             double imc = peso / (altura * altura);
-            System.out.printf("IMC: %.2f%n", imc);
+            String resultado = String.format("IMC: %.2f\n", imc);
 
             if (imc < 18.5) {
-                System.out.println("Bajo peso");
+                resultado += "Bajo peso";
             } else if (imc < 25) {
-                System.out.println("Normal");
+                resultado += "Normal";
             } else if (imc < 30) {
-                System.out.println("Sobrepeso");
+                resultado += "Sobrepeso";
             } else {
-                System.out.println("Obesidad");
+                resultado += "Obesidad";
             }
+            JOptionPane.showMessageDialog(null, resultado);
         }
 
-        entrada.close();
     }
 }

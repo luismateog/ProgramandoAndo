@@ -1,19 +1,20 @@
 package Guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio26 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
         int[] numeros = new int[10];
 
         for (int i = 0; i < numeros.length; i++) {
-            System.out.print("Ingrese el numero " + (i + 1) + ": ");
-            numeros[i] = entrada.nextInt();
+            String texto = JOptionPane.showInputDialog("Ingrese el numero " + (i + 1) + ":");
+            if (texto == null) return;
+            numeros[i] = Integer.parseInt(texto);
         }
 
-        System.out.print("Ingrese el valor que desea buscar: ");
-        int valor = entrada.nextInt();
+        String textoValor = JOptionPane.showInputDialog("Ingrese el valor que desea buscar:");
+        if (textoValor == null) return;
+        int valor = Integer.parseInt(textoValor);
 
         int ocurrencias = 0;
         for (int i = 0; i < numeros.length; i++) {
@@ -22,7 +23,6 @@ public class Ejercicio26 {
             }
         }
 
-        System.out.println("El valor aparece " + ocurrencias + " veces.");
-        entrada.close();
+        JOptionPane.showMessageDialog(null, "El valor aparece " + ocurrencias + " veces.");
     }
 }

@@ -1,16 +1,15 @@
 package Guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio8 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.print("Ingrese el valor de la compra: $");
-        double compra = entrada.nextDouble();
+        String texto = JOptionPane.showInputDialog("Ingrese el valor de la compra: $");
+        if (texto == null) return;
+        double compra = Double.parseDouble(texto);
 
         if (compra < 0) {
-            System.out.println("El valor de la compra no puede ser negativo.");
+            JOptionPane.showMessageDialog(null, "El valor de la compra no puede ser negativo.");
         } else {
             double porcentajeDescuento = 0;
 
@@ -25,11 +24,10 @@ public class Ejercicio8 {
             double descuento = compra * porcentajeDescuento;
             double total = compra - descuento;
 
-            System.out.printf("Valor original: $%.2f%n", compra);
-            System.out.printf("Descuento: $%.2f%n", descuento);
-            System.out.printf("Total a pagar: $%.2f%n", total);
+            JOptionPane.showMessageDialog(null, String.format(
+                    "Valor original: $%.2f\nDescuento: $%.2f\nTotal a pagar: $%.2f",
+                    compra, descuento, total));
         }
 
-        entrada.close();
     }
 }

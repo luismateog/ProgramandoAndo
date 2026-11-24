@@ -1,39 +1,39 @@
 package Guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio4 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.print("Ingrese el primer número: ");
-        double primero = entrada.nextDouble();
-        System.out.print("Ingrese el segundo número: ");
-        double segundo = entrada.nextDouble();
-        System.out.print("Ingrese un operador (+, -, *, /): ");
-        char operador = entrada.next().charAt(0);
+        String textoPrimero = JOptionPane.showInputDialog("Ingrese el primer número:");
+        if (textoPrimero == null) return;
+        String textoSegundo = JOptionPane.showInputDialog("Ingrese el segundo número:");
+        if (textoSegundo == null) return;
+        String textoOperador = JOptionPane.showInputDialog("Ingrese un operador (+, -, *, /):");
+        if (textoOperador == null || textoOperador.isEmpty()) return;
+        double primero = Double.parseDouble(textoPrimero);
+        double segundo = Double.parseDouble(textoSegundo);
+        char operador = textoOperador.charAt(0);
 
         switch (operador) {
             case '+':
-                System.out.println("Resultado: " + (primero + segundo));
+                JOptionPane.showMessageDialog(null, "Resultado: " + (primero + segundo));
                 break;
             case '-':
-                System.out.println("Resultado: " + (primero - segundo));
+                JOptionPane.showMessageDialog(null, "Resultado: " + (primero - segundo));
                 break;
             case '*':
-                System.out.println("Resultado: " + (primero * segundo));
+                JOptionPane.showMessageDialog(null, "Resultado: " + (primero * segundo));
                 break;
             case '/':
                 if (segundo == 0) {
-                    System.out.println("No se puede dividir entre cero.");
+                    JOptionPane.showMessageDialog(null, "No se puede dividir entre cero.");
                 } else {
-                    System.out.println("Resultado: " + (primero / segundo));
+                    JOptionPane.showMessageDialog(null, "Resultado: " + (primero / segundo));
                 }
                 break;
             default:
-                System.out.println("Operador no válido.");
+                JOptionPane.showMessageDialog(null, "Operador no válido.");
         }
 
-        entrada.close();
     }
 }

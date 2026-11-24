@@ -1,17 +1,18 @@
 package Guia1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ejercicio7 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.print("Ingrese el primer numero: ");
-        double primero = entrada.nextDouble();
-        System.out.print("Ingrese el segundo numero: ");
-        double segundo = entrada.nextDouble();
-        System.out.print("Ingrese el tercer numero: ");
-        double tercero = entrada.nextDouble();
+        String textoPrimero = JOptionPane.showInputDialog("Ingrese el primer numero:");
+        if (textoPrimero == null) return;
+        String textoSegundo = JOptionPane.showInputDialog("Ingrese el segundo numero:");
+        if (textoSegundo == null) return;
+        String textoTercero = JOptionPane.showInputDialog("Ingrese el tercer numero:");
+        if (textoTercero == null) return;
+        double primero = Double.parseDouble(textoPrimero);
+        double segundo = Double.parseDouble(textoSegundo);
+        double tercero = Double.parseDouble(textoTercero);
 
         double mayor = primero;
         if (segundo > mayor) {
@@ -32,13 +33,12 @@ public class Ejercicio7 {
             cantidadMayores++;
         }
 
-        System.out.println("El mayor es: " + mayor);
+        String resultado = "El mayor es: " + mayor;
         if (cantidadMayores == 2) {
-            System.out.println("Hay un empate entre dos numeros.");
+            resultado += "\nHay un empate entre dos numeros.";
         } else if (cantidadMayores == 3) {
-            System.out.println("Hay un empate entre los tres numeros.");
+            resultado += "\nHay un empate entre los tres numeros.";
         }
-
-        entrada.close();
+        JOptionPane.showMessageDialog(null, resultado);
     }
 }
