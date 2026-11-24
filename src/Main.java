@@ -1,45 +1,23 @@
 import java.util.Scanner;
 
+import Guia1.GuiaMain;
+
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
         System.out.println("Bienvenido A Programando Ando");
-        System.out.println("Aquí Aprenderás Java");
-        System.out.println("Ingrese una opción para el programa:");
-
-        for (int i = 1; i <= 29; i++) {
-            System.out.println(i + ". Ejercicio Guía 1 - Ejercicio " + i);
-        }
+        System.out.println("Aquí Aprenderas Java");
+        System.out.println("Ingrese una opcion para El Programa");
+        System.out.println("1.Ejercicio Guia 1");
 
         int opcion;
-        try {
-            opcion = input.nextInt();
-        } catch (java.util.InputMismatchException e) {
-            System.out.println("La opción debe ser un número entero.");
-            return;
-        }
 
-        if (opcion < 1 || opcion > 29) {
-            System.out.println("Opción no válida. Seleccione un número entre 1 y 29.");
-            return;
-        }
+        Scanner input = new Scanner(System.in);
 
-        System.out.println("Ingresando al Ejercicio " + opcion + " de la Guía 1...");
+        opcion = input.nextInt();
 
-        try {
-            Class<?> ejercicio = Class.forName("Guia1.Ejercicio" + opcion);
-            ejercicio.getMethod("main", String[].class).invoke(null, (Object) args);
-        } catch (ClassNotFoundException e) {
-            System.out.println("El Ejercicio " + opcion + " todavía no tiene una clase creada.");
-        } catch (NoSuchMethodException e) {
-            System.out.println("El Ejercicio " + opcion + " no tiene un método main para ejecutarse.");
-        } catch (ReflectiveOperationException e) {
-            System.out.println("No se pudo ejecutar el Ejercicio " + opcion + ".");
-            Throwable causa = e.getCause();
-            if (causa != null) {
-                causa.printStackTrace();
-            }
+        if (opcion == 1) {
+            System.out.println("Ingresando A Ejercicios Guia 1");
+            GuiaMain guia1 = new GuiaMain();
         }
     }
 }
